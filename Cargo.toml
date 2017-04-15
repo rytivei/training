@@ -1,0 +1,6 @@
+[package]
+name = "rust-training"
+version = "0.1.0"
+authors = ["Veikko Rytivaara <veikko.rytivaara@bittium.com>"]
+
+[dependencies]
