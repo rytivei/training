@@ -1,3 +1,7 @@
+/// `FizzBuzz` with tuples using structure style
+///
+/// Very basic example of using tuples.
+/// Almost so simple it hurts my eyes :)
 pub fn using_structured_style() {
     println!(">>>> [{}] using_structured_style", file!());
     for number in 1..101 {
@@ -19,6 +23,11 @@ pub fn using_structured_style() {
     }
 }
 
+/// `FizzBuzz` using tuples via a "match" block.
+///
+/// This is a nice example of tuple unpacking.
+/// Code is very readable and easy to understand.
+/// Try to use "match" instead of if-elif-else structures in Rust.
 pub fn using_match_with_tuples() {
     println!(">>>> [{}] using_match_with_tuples", file!());
     for number in 1..101 {
