@@ -42,10 +42,25 @@ struct FizzBuzz {
 }
 
 impl FizzBuzz {
+    fn new(a_fizz: String, a_buzz: String) -> FizzBuzz {
+        FizzBuzz {
+            fizz: a_fizz,
+            buzz: a_buzz,
+        }
+    }
+    // getter
     fn three(&self) -> &String {
-        // TODO: make mutable
-        //self.fizz = "Fizz".to_string();
-        return &self.fizz;
+        &self.fizz
+    }
+    // getter
+    fn five(&self) -> &String {
+        &self.buzz
+    }
+    fn fifteen(&self) -> String {
+        let mut tmp = String::new();
+        tmp.push_str(&self.fizz);
+        tmp.push_str(&self.buzz);
+        tmp
     }
 }
 //trait IsDivisableBy {
@@ -53,18 +68,13 @@ impl FizzBuzz {
 //fn five(&self, number: u8) -> String;
 //}
 
-//impl IsDivisableBy for FizzBuzz {
-//fizz = "Fizz".to_string();
-// fn three(&self, number: u8) -> &String {
-//     if number % 3 == 0 {
-//         "Fizz".to_string()
-//     }
-//     &self.fizz
-// }
-
-//fn five(&self, number: u8) -> String {}
-//}
-
 pub fn using_oop_style() {
-    for number in 1..101 {}
+    let obj = FizzBuzz::new("Fizz".to_string(), "Buzz".to_string());
+    for number in 1..101 {
+        let n = number.to_string();
+        obj.three();
+        obj.five();
+        obj.fifteen();
+        println!("{}", n);
+    }
 }
