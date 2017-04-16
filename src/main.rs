@@ -1,19 +1,14 @@
 mod simple;
 mod tuple;
-
+mod recursion;
 
 fn main() {
-    simple::using_structured_style();
-    simple::using_if_as_expression();
-    simple::using_oop_style();
-    tuple::using_structured_style();
-    tuple::using_match_with_tuples();
-
+    simple::run_simple();
+    tuple::run_tuple();
+    recursion::run_recursion();
+    // TODO: filesystem.rs
+    // TODO: mmap.rs
+    // TODO: networking.rs
+    // TODO: threads.rs
+    // TODO: vector.rs
 }
-
-// TODO: filesystem.rs
-// TODO: mmap.rs
-// TODO: networking.rs
-// TODO: recursion.rs
-// TODO: threads.rs
-// TODO: vector.rs

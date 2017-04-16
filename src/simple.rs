@@ -1,9 +1,18 @@
 use std::{thread, time};
 
-/// `FizzBuzz` using sructured style
+/// PUBLIC: Run all simple examples.
 ///
-/// This is a very simple example using "C-ike" structured style.
-pub fn using_structured_style() {
+/// In Rust it doesn't matter where you declare your function inside a file.
+pub fn run_simple() {
+    using_structured_style();
+    using_if_as_expression();
+    using_oop_style();
+}
+
+/// PRIVATE: Example using C-like sructured style
+///
+/// This is the most basic example and very understandable to any coming from C language.
+fn using_structured_style() {
     println!(">>>> [{}] using_structured_style", file!());
     let sleep_duration = time::Duration::from_millis(100);
     for number in 1..101 {
@@ -20,11 +29,10 @@ pub fn using_structured_style() {
     }
 }
 
-/// `FizzBuzz` showing Rust if which is an expression
+/// PRIVATE: Example using 'if' as a expression.
 ///
-/// All 'if' statements in Rust are expressions.
-/// Learn to appreciate them or perish.
-pub fn using_if_as_expression() {
+/// In Rust all 'if' statements are expressions, so you can use that to your advantage.
+fn using_if_as_expression() {
     println!(">>>> [{}] using_if_as_expression", file!());
     let sleep_duration = time::Duration::from_millis(100);
     for number in 1..101 {
@@ -73,13 +81,14 @@ impl FizzBuzz {
     }
 }
 
-/// `FizzBuzz` showing OOP style using composition.
+/// PRIVATE: Example showing OOP style using composition.
 ///
-/// Rust doesn't have inhertance, but uses "interfaces"
-/// called traits in Rust
+/// Rust doesn't have inheritance, because it uses the more flexible composition paradigm.
 pub fn using_oop_style() {
+    let sleep_duration = time::Duration::from_millis(100);
     let obj = FizzBuzz::new("Fizz".to_string(), "Buzz".to_string());
     for number in 1..101 {
+        thread::sleep(sleep_duration);
         if number % 15 == 0 {
             println!("{}", obj.fifteen());
         } else if number % 3 == 0 {
