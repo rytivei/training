@@ -1,3 +1,5 @@
+use std::{thread, time};
+
 /// PUBLIC: Run all tuple examples.
 pub fn run_tuple() {
     using_structured_style();
@@ -23,7 +25,9 @@ pub fn use_match_with_tuples(number: u8) -> String {
 /// This example shows how to access tuples.
 fn using_structured_style() {
     println!(">>>> [{}] using_structured_style", file!());
+    let sleep_duration = time::Duration::from_millis(100);
     for number in 1..101 {
+        thread::sleep(sleep_duration);
         let mut pair: (String, String) = (String::from(""), String::from(""));
         if number % 15 == 0 {
             pair.0 = "Fizz".to_string();
@@ -49,7 +53,9 @@ fn using_structured_style() {
 /// In Rust "match" is preferred over "if-elif-else" structure.
 fn using_match_with_tuples() {
     println!(">>>> [{}] using_match_with_tuples", file!());
+    let sleep_duration = time::Duration::from_millis(100);
     for number in 1..101 {
-        use_match_with_tuples(number);
+        thread::sleep(sleep_duration);
+        println!("{}", use_match_with_tuples(number));
     }
 }
