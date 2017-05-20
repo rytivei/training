@@ -85,6 +85,7 @@ impl FizzBuzz {
 ///
 /// Rust doesn't have inheritance, because it uses the more flexible composition paradigm.
 pub fn using_oop_style() {
+    println!(">>>> [{}] using_oop_style", file!());
     let sleep_duration = time::Duration::from_millis(100);
     let obj = FizzBuzz::new("Fizz".to_string(), "Buzz".to_string());
     for number in 1..101 {
